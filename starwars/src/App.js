@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import axios from 'axios';
+import {container } from 'reactstrap';
 
 import { useState, useEffect } from 'react';
 
@@ -26,6 +27,9 @@ useEffect(()=> {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
+      <Container>
+        
+      </Container>
     </div>
   );
 }
