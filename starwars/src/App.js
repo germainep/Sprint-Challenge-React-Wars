@@ -2,7 +2,8 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import axios from 'axios';
-import {container } from 'reactstrap';
+import { Container, Row, CardColumns } from 'reactstrap';
+import CharacterCard from './components/CharacterCard/CharacterCard'
 
 import { useState, useEffect } from 'react';
 
@@ -17,18 +18,24 @@ const [peopleState, setPeopleState] = useState([]);
   // sync up with, if any.
 useEffect(()=> {
   axios
-    .get('http://swapi.co.api/people/1')
-      .then(res => setPeopleState(res))
-      .catch(err => console.error(err))
-  ;
-}, [peopleState]);
+    .get('https://swapi.co/api/people')
+    .then(res => setPeopleState(res.data.results))
+    .catch(err => console.log(err));
+}, []);
 
+const peopleList = peopleState.map((person, index) => {
+  return ( 
+      <CharacterCard key={index} name={person.name} mass={person.mass} height={person.height}/>
+  )
+})
 
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
       <Container>
-        
+        <Row>
+          <CardColumns>{peopleList}</CardColumns>
+        </Row>
       </Container>
     </div>
   );
