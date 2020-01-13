@@ -38,7 +38,7 @@ const peopleList = peopleState.map((person, index) => {
     <h1 className="Header">React Wars</h1>
       <Container>
         <Row>
-          <CardColumns>{peoplelist}</CardColumns>
+          <CardColumns>{peopleList}</CardColumns>
         </Row>
       </Container>
     </div>
