@@ -1,6 +1,11 @@
-import React from 'react';
-import axios from 'axios';
-import './App.css';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import axios from "axios";
+import { Container, Row, CardColumns } from "reactstrap";
+import CharacterCard from "./components/CharacterCard/CharacterCard";
+
+import { useState, useEffect } from "react";
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -30,7 +35,7 @@ const peopleList = peopleState.map((person, index) => {
 
   return (
     <div className="App">
-      <div>{peoplelist}</div>
+      <Container>{peoplelist}</Container>
     </div>
   );
 }
