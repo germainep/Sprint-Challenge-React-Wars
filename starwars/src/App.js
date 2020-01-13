@@ -17,6 +17,17 @@ useEffect(() => {
     .catch(err => console.log(err));
 }, []);
 
+const peopleList = peopleState.map((person, index) => {
+  return (
+    <CharacterCard
+      key={index}
+      name={person.name}
+      mass={person.mass}
+      height={person.height}
+    />
+  );
+});
+
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
