@@ -35,7 +35,12 @@ const peopleList = peopleState.map((person, index) => {
 
   return (
     <div className="App">
-      <Container>{peoplelist}</Container>
+    <h1 className="Header">React Wars</h1>
+      <Container>
+        <Row>
+          <CardColumns>{peoplelist}</CardColumns>
+        </Row>
+      </Container>
     </div>
   );
 }
