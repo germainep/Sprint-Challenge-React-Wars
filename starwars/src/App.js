@@ -30,7 +30,7 @@ const peopleList = peopleState.map((person, index) => {
 
   return (
     <div className="App">
-      <h1 className="Header">React Wars</h1>
+      <div>{peoplelist}</div>
     </div>
   );
 }
